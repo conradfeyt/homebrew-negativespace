@@ -9,6 +9,10 @@ cask "negativ_" do
 
   app "Negativ_.app"
 
+  postflight do
+    system_command "/usr/bin/open", args: ["-a", "Negativ_"]
+  end
+
   zap trash: [
     "~/Documents/MyNegativeSpaceVault",
     "~/Library/Application Support/NegativeSpace",
