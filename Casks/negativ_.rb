@@ -10,6 +10,7 @@ cask "negativ_" do
   app "Negativ_.app"
 
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Negativ_.app"]
     system_command "/usr/bin/open", args: ["#{appdir}/Negativ_.app"]
   end
 
